@@ -1,8 +1,12 @@
 :root {
     --mviolet: hsl(263, 55%, 52%);
     --gblue: hsl(217, 19%, 35%);
+    --ggblue: rgba(72, 85, 106, .5);
+    --gggblue: rgba(72, 85, 106, .7);
     --dblue: hsl(219, 29%, 14%);
     --white: hsl(0, 0%, 100%);
+    --twhite: rgba(225, 225, 225, .5);
+    --ttwhite: rgba(225, 225, 225, .7);
     --lgray: hsl(0, 0%, 81%);
     --lgblue: hsl(210, 46%, 95%);
 }
@@ -12,17 +16,107 @@
     margin: 0;
     padding: 0;
 }
-html {
-    font-size: 10px;
+body {
+    background-color: var(--lgblue);
 }
 main.container {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    margin: 2rem;
+    justify-content: center;
+    grid-template-areas: 
+    'first'
+    'second'
+    'third'
+    'fourth'
+    'fifth'
+    ;
+    margin: 1.25rem;
+    padding: 1.25rem;
+    gap: 1.25rem;
 }
-.card1 {grid-area: first;}
-.card2 {grid-area: second;}
-.card3 {grid-area: third;}
-.card4 {grid-area: fourth;}
-.card5 {grid-area: fifth;}
+.card {
+    padding: 2rem 3rem;
+    box-shadow: 0 5px 10px 0 var(--lgray);
+}
+.card1 {
+    grid-area: first;
+    background: var(--mviolet);
+    position: relative;
+}
+.card1::after {
+    position: absolute;
+    content: "“";
+    font-size: 30rem;
+    color: var(--twhite);
+    top: -5.7rem;
+    right: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-block-end: 1.25rem;
+}
+.flex {
+    margin-inline-start: .937rem;
+}
+.name {
+    color: var(--white);
+}
+.name, .name2 {
+    font-weight: bold;
+}
+.name2 {
+    color: var(--gblue);
+}
+.vg {
+    color: var(--twhite);
+}
+.vg2 {
+    color: var(--ggblue);
+}
+.white {
+    color: var(--white);
+}
+.white, .white2 {
+    margin-block-end: 1.25rem;
+}
+.white2 {
+    color: var(--gblue);
+}
+.para {
+    color: var(--ttwhite);
+}
+.para2 {
+    color: var(--gggblue);
+}
+img {
+    border-radius: 50%;
+    border: .062rem solid var(--twhite);
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.diff {
+    border: .125rem solid var(--mviolet);
+}
+.card2 {   
+    background-color: var(--gblue);
+    grid-area: second;
+}
+.card3 {
+    grid-area: third;
+    background-color: var(--white);
+}
+.card4 {
+    grid-area: fourth;
+    background-color: var(--dblue);
+
+}
+.card5 {
+    grid-area: fifth;
+    background-color: var(--white);
+}
+
+.card {
+    border-radius: .625rem;
+}
