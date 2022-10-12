@@ -120,3 +120,13 @@ img {
 .card {
     border-radius: .625rem;
 }
+@media screen and (min-width: 600px) {
+    main.container {
+        background-color: green;
+        height: calc(100vh - 2rem);
+        grid-template-areas: 
+        'first first first first second second fifth fifth'
+        'third fourth fourth fourth fourth fourth fifth fifth'
+        ;
+    }
+}
