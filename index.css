@@ -34,8 +34,9 @@ main.container {
     gap: 1.25rem;
 }
 .card {
-    padding: 2rem 3rem;
+    padding: 2rem 2rem;
     box-shadow: 0 5px 10px 0 var(--lgray);
+    border-radius: .625rem;
 }
 .card1 {
     grid-area: first;
@@ -116,17 +117,12 @@ img {
     grid-area: fifth;
     background-color: var(--white);
 }
-
-.card {
-    border-radius: .625rem;
-}
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 992px) {
     main.container {
-        background-color: green;
-        height: calc(100vh - 2rem);
         grid-template-areas: 
         'first first first first second second fifth fifth'
         'third fourth fourth fourth fourth fourth fifth fifth'
         ;
     }
+    
 }
